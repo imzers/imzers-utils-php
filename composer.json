@@ -2,11 +2,6 @@
     "name": "imzers/imzers-utils",
     "description": "Utility PHP Library for daily projects",
     "type": "library",
-    "require": {
-        "ext-json": "*",
-        "php": ">=5.6",
-        "ext-curl": "*"
-    },
     "license": "GPL-3.0",
     "authors": [
         {
@@ -16,7 +11,18 @@
     ],
 	"autoload": {
 		"psr-4": {
-			"Imzers\\": "src"
+			"Imzers\\": "psr/imzers/imzers-utils/src"
 		}
-	}
+	},
+	"require": {
+        "php": ">=5.6",
+        "ext-curl": "*",
+		"ext-json": "*"
+    },
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/imzers/imzers-utils-php" 
+		}
+	]
 }
