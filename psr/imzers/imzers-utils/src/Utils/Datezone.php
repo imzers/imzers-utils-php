@@ -22,4 +22,13 @@ class Datezone {
 	public function format($format) {
 		return $this->DateObject->format($format);
 	}
+	public static function create_time_zone($timezone, $datetime = null) {
+		if (!isset($datetime)) {
+			$datetime = date('Y-m-d H:i:s');
+		}
+		$DateObject = new DateTime($datetime);
+		$DateObject->setTimezone(new DateTimeZone($timezone));
+		// TO using use @DateObject->format('Y') : Year
+		return $DateObject;
+	}
 }
