@@ -14,5 +14,10 @@
             "name": "Imran Nababan",
             "email": "imzers@gmail.com"
         }
-    ]
+    ],
+	"autoload": {
+		"psr-4": {
+			"Imzers\\": "src"
+		}
+	}
 }
