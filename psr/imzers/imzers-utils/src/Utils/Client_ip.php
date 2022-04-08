@@ -37,5 +37,24 @@ class Client_ip {
 		$ip = ($ip === false) ? '0.0.0.0' : $ip;
 		return $ip;
 	}
+	function check_ip_version($type, $ip) {
+		switch($type) {
+			case 'ipv6':
+				if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
+					return true;
+				} else {
+					return false;
+				}
+			break;
+			case 'ipv4':
+			default:
+				if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+					return true;
+				} else {
+					return false;
+				}
+			break;
+		}
+	}
 }
 

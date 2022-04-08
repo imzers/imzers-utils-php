@@ -12,6 +12,10 @@ class Datezone {
 		$this->DateObject = new DateTime(date("Y-m-d H:i:s.{$micro}", $microtime));
 		$this->DateObject->setTimezone(new DateTimeZone($timezone));
 	}
+	public function get_dateobject_source() {
+		return $this->DateObject;
+	}
+	
 	function create_datetime_format($format) {
 		// $format : YmdHisu
 		return $this->DateObject->format($format);
