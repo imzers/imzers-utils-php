@@ -7,9 +7,10 @@ class Datezone {
 	
 	function __construct($timezone) {
 		// $timezone : Asia/Bangkok
-		$microtime = microtime(true);
-		$micro = round(($microtime - floor($microtime)) * 1000000);
-		$this->DateObject = new DateTime(date("Y-m-d H:i:s.{$micro}", $microtime));
+		#$microtime = microtime(true);
+		#$micro = round(floor($microtime) * 1000000);
+		#$this->DateObject = new DateTime(date("Y-m-d H:i:s.{$micro}", $microtime));
+		$this->DateObject = new DateTime(date("Y-m-d H:i:s"));
 		$this->DateObject->setTimezone(new DateTimeZone($timezone));
 	}
 	public function get_dateobject_source() {
